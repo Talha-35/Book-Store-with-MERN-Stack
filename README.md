@@ -1,1 +1,1 @@
-# Book-Store-with-MERN-Stack
+# mern-stack
