@@ -1,28 +1,21 @@
 const express = require("express");
-
 const router = express.Router();
-const AuthRouter = require("./AuthRouter");
-const ProfileRouter = require("./ProfileRouter");
-const BookRouter = require("./BookRouter");
+const BookController = require("../controllers/BookController");
 
-// Only /api endpoint
+// base url: /api/books
 
 /**
- * @route /api/auth
- * @desc Route for Auth
+ * @route   GET /api/books
+ * @desc    Books Listing endpoint
+ * @access  Public
  */
-router.use("/auth", AuthRouter);
+router.get("/", BookController.getBookList);
 
 /**
- * @route /api/profile
- * @desc Route for Profile
+ * @route   GET /api/books/details/:id
+ * @desc    Books Details endpoint
+ * @access  Public
  */
-router.use("/profile", ProfileRouter);
-
-/**
- * @route /api/book
- * @desc Route for Book
- */
-router.use("/books", BookRouter);
+router.get("/details/:id", BookController.getBookDetails);
 
 module.exports = router;
