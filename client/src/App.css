@@ -1,3 +1,6 @@
+@import '~antd/dist/antd.css';
+/* ~ bu işaret node_modulus klasörünü işaret ediyor. ant design için bunu import etmek lazım */
+
 .App {
   text-align: center;
 }
